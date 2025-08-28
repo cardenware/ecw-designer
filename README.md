@@ -33,7 +33,7 @@ To set up and run ECW Designer, follow these steps:
 ### Prerequisites
 
 *   Windows 10+
-*   Python 3.x
+*   Python 3.9+
 
 *   `pip` (Python package installer)
 
@@ -43,16 +43,16 @@ To set up and run ECW Designer, follow these steps:
 
 
 ```bash
-    git clone https://github.com/omicron91/ecw_designer.git
+git clone https://github.com/omicron91/ecw_designer.git
 
-    cd ecw_designer
+cd ecw_designer
 ```
 
 
 2.  **Install dependencies**:
 
 ```bash
-    pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -60,17 +60,22 @@ To set up and run ECW Designer, follow these steps:
 To run the ECW Designer application from the root folder:
 
 ```bash
-    cd src/
-    python ecw_designer.py
+cd src/
+python ecw_designer.py
 ```
+
+The AI module works with Gemini. You can obtain an API key from the following link: https://aistudio.google.com/app/apikey
+.
+
+The program manages the key using the `keyring` module, which securely stores secrets locally. This ensures that the keys are never exposed to the internet.
 
 ## Bundling
 
 To compile modules into dynamic link libraries and package the files from the root folder:
 
 ```bash
-    python setup.py build_ext --inplace
-    python py2exe/generate_exe
+python setup.py build_ext --inplace
+python py2exe/generate_exe
 ```
 
 *The bundled folder should be inside py2exe/dist/*
